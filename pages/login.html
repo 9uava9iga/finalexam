@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible="IE=edge>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員資料</title>
+    <link rel="stylesheet" href="../assets/login.css">
+</head>
+<script>
+    function showRegister() {
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('register-form').style.display = 'block';
+    }
+
+    function showLogin() {
+        document.getElementById('login-form').style.display = 'block';
+        document.getElementById('register-form').style.display = 'none';
+    }
+
+    function login(event) {
+        event.preventDefault();
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+
+        // 檢查用戶是否已註冊（這裡應該連接到伺服器進行驗證）
+        const user = JSON.parse(localStorage.getItem(email));
+
+        if (user && user.password === password) {
+            alert('登入成功');
+            window.location.href = "index.html"; // 跳轉到首頁
+        } else {
+            alert('電子郵件或密碼錯誤，請重新輸入');
+        }
+    }
+
+    function register(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const address = document.getElementById('address').value;
+        const email = document.getElementById('register-email').value;
+        const password = document.getElementById('register-password').value;
+
+        const user = { name, phone, address, email, password };
+        localStorage.setItem(email, JSON.stringify(user));
+        alert('註冊成功');
+        showLogin();
+    }
+</script>
+<body>
+    <header>
+        <h1>太陽眼鏡商店</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="index.html">產品</a></li>
+                <li><a href="cart.html" >購物車</a></li>
+                <li><a href="login.html" >會員登入</a></li>
+                <li><a href="profile.html" >會員資料</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+            </ul>
+        </nav>
+        <div class="cart">
+            <a href="cart.html">
+                <img src="../assets/img/cart.png" alt="購物車" style="width: 80px; height: 80px;">
+            </a>
+        </div>
+    </header>
+    <main>
+        <div id="login-modal" class="modal">
+            <div class="modal-content">
+                <div id="login-form">
+                    <h2>會員登入</h2>
+                    <form onsubmit="login(event)">
+                        <div>
+                            <label for="login-email">電子郵件：</label>
+                            <input type="email" id="login-email" name="login-email" required>
+                        </div>
+                        <div>
+                            <label for="login-password">輸入密碼：</label>
+                            <input type="password" id="login-password" name="login-password" required>
+                        </div>
+                        <button type="submit">登入</button>
+                    </form>
+                    <p>沒有帳號？<a href="javascript:void(0)" onclick="showRegister()">註冊</a></p>
+                </div>
+                <div id="register-form" style="display: none;">
+                    <h2>會員註冊</h2>
+                    <form onsubmit="register(event)">
+                        <div>
+                            <label for="name">姓名：</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div>
+                            <label for="phone">電話：</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div>
+                            <label for="address">地址：</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                        <div>
+                            <label for="register-email">郵件：</label>
+                            <input type="email" id="register-email" name="register-email" required>
+                        </div>
+                        <div>
+                            <label for="register-password">密碼：</label>
+                            <input type="password" id="register-password" name="register-password" required>
+                        </div>
+                        <button type="submit">註冊</button>
+                    </form>
+                    <p>已經有帳號？<a href="" onclick="showLogin()">登入</a></p>
+                    
+                </div>
+            </div>
+        </div><img src="../assets/img/log in.png" style="width: 300px; height: 150px;">
+    </main>
+    <footer>
+        <p>&copy; 2024 太陽眼鏡商店。保留所有權利。</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEONARD倫納德-太陽眼鏡</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script src="../assets/script.js"></script>
+</head>
+<link rel="stylesheet" href="../assets/pagestyle.css">
+<header>
+    <h1>太陽眼鏡商店</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="index.html">商品</a></li>
+            <li><a href="cart.html" >購物車</a></li>
+            <li><a href="login.html" >會員登入</a></li>
+            <li><a href="profile.html" >會員資料</a></li>
+            <li><a href="contact.html">聯絡我們</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="container">
+        <div class="product">
+            <div class="product-image">
+                <img src="../assets/img/LEONARD.jpg" alt="商品圖片" style="width: 600px; height: 300px;">
+            </div>
+            <div class="product-info">
+                <h1>LEONARD倫納德</h1>
+                <p>價格：$1,680</p>
+                <p>鏡架 拋光 條紋灰色與藍色</p>
+                <p>鏡片灰色</p>
+                <div class="quantity">
+                    <label for="quantity">數量:</label>
+                    <input type="number" id="quantity" name="quantity" value="1" min="1">
+                </div>
+                <button class="add-to-cart">加入購物車</button>
+            </div>
+        </div>
+        <div class="reviews">
+            <h2>評論區</h2>
+            <div id="review-list">
+            </div>
+            <div class="product-rating">
+                <span class="star" data-value="1">☆</span>
+                <span class="star" data-value="2">☆</span>
+                <span class="star" data-value="3">☆</span>
+                <span class="star" data-value="4">☆</span>
+                <span class="star" data-value="5">☆</span>
+            </div>
+            <div class="review-form">
+                <h3>發表評論</h3>
+                <textarea id="review-text" placeholder="寫下你的評論"></textarea>
+                <button id="submit-review">提交評論</button>
+                <p>user：
+                    <div class="star-rating" style="--rating: 80%;"></div>
+                    超好看!</p>
+                <p>user：
+                    <div class="star-rating" style="--rating: 80%;"></div>
+                    推!</p>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/pagescipt.js"></script>
+
+   
+</main>
+
+ 
+
+<footer>
+    <p>&copy; 2024 太陽眼鏡商店。保留所有權利。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #CEEAF7;
+}
+
+header {
+    background-color: #B5C9E6;
+    color: #000;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* 選單背景顏色 */
+    z-index: 1000;
+    /* 確保選單在最上層 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* 可以添加陰影效果，使選單更突出 */
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    padding: 14px 16px;
+    color: black;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #D6A5C2;
+    color: white;
+}
+
+.cart {
+    position: fixed;
+    top: 27px;
+    right: 10px;
+    z-index: 1001;
+    /* 確保在header之上 */
+}
+
+.cart img {
+    width: 100px;
+    height: 100px;
+}
+
+main {
+    padding: 150px 60px;
+    text-align: center;
+}
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 800px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table,
+th,
+td {
+    border: 1px solid #ccc;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #4682b4;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.star-rating {
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+}
+
+.star-rating::before {
+    content: '★★★★★';
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, gold var(--rating), #ccc var(--rating));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+footer {
+    background-color: #B5C9E6;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}

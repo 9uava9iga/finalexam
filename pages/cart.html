@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員資料</title>
+    <link rel="stylesheet" href="../assets/cart.css">
+</head>
+<script>
+function clearCart() {
+    cart = [];
+    updateCart();
+}
+
+function showCheckoutModal() {
+    if (isLoggedIn) {
+        document.getElementById('checkout-modal').style.display = 'block';
+    } else {
+        alert('請先登入');
+        toggleLogin();
+    }
+}
+</script>
+    
+<body>
+    <header>
+        <h1>太陽眼鏡商店</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="index.html">產品</a></li>
+                <li><a href="cart.html" >購物車</a></li>
+                <li><a href="login.html" >會員登入</a></li>
+                <li><a href="profile.html" >會員資料</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+            </ul>
+        </nav>
+    
+    </header>
+    <main>
+    <img src="../assets/img/cart1.png" style="width: 150px; height: 150px;">
+    <div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <h2>購物車</h2>
+        <div id="cart-items"></div>
+        <p id="total-price">總價：$0</p>
+        <button onclick="clearCart()">清空購物車</button>
+        <button><a href="pay.html">結帳</a></button>
+    </div>
+</div>
+    </main>
+    <footer>
+        <p>copyright@ 2024 All rights reserved</p>
+    </footer>
+</body>
+ 
+</html>
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/cart.css">
+</head>
+<script>
+    function closeCheckoutModal() {
+    document.getElementById('checkout-modal').style.display = 'none';
+}
+
+function checkout(event) {
+    event.preventDefault();
+    const name = document.getElementById('checkout-name').value;
+    const phone = document.getElementById('checkout-phone').value;
+    const address = document.getElementById('checkout-address').value;
+    const paymentMethod = document.getElementById('payment-method').value;
+    const creditCardNumber = document.getElementById('credit-card-number').value;
+
+    if (paymentMethod === 'credit-card' && !creditCardNumber) {
+        alert('請填寫信用卡卡號');
+        return;
+    }
+
+    alert(`訂單已提交！
+    姓名：${name}
+    電話：${phone}
+    地址：${address}
+    支付方式：${paymentMethod === 'credit-card' ? '刷卡付款' : '貨到付款'}
+    ${paymentMethod === 'credit-card' ? `信用卡卡號：${creditCardNumber}` : ''}`);
+
+    cart = [];
+    closeCheckoutModal();
+    updateCart();
+}
+
+function toggleCreditCardInput() {
+    const paymentMethod = document.getElementById('payment-method').value;
+    const creditCardInfo = document.getElementById('credit-card-info');
+    creditCardInfo.style.display = paymentMethod === 'credit-card' ? 'block' : 'none';
+}
+</script>
+<header>
+    <h1>太陽眼鏡商店</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="index.html">商品</a></li>
+            <li><a href="cart.html" >購物車</a></li>
+            <li><a href="login.html" >會員登入</a></li>
+            <li><a href="profile.html" >會員資料</a></li>
+            <li><a href="contact.html">聯絡我們</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <body>
+        <div id="checkout-modal" class="modal">
+           <div class="modal-content">
+            <img src="../assets/img/delivery.png" width="300px" height="200px">
+               <h2>寄送地址</h2>
+               <form id="checkout-form" onsubmit="checkout(event)">
+                   <div>
+                       <label for="checkout-name">姓名：</label>
+                       <input type="text" id="checkout-name" required>
+                   </div>
+                   <div>
+                       <label for="checkout-phone">電話：</label>
+                       <input type="tel" id="checkout-phone" required>
+                   </div>
+                   <div>
+                       <label for="checkout-address">地址：</label>
+                       <input type="text" id="checkout-address" required>
+                   </div>
+                   <div>
+                       <label for="payment-method">支付方式：</label>
+                       <select id="payment-method" required onchange="toggleCreditCardInput()">
+                           <option value="cash on delivery">貨到付款</option>
+                           <option value="credit-card">刷卡付款</option>
+                           
+                       </select>
+                        
+                   </div>
+                   <div id="credit-card-info" style="display: none;">
+                       <label for="credit-card-number">信用卡卡號：</label>
+                       <input type="text" id="credit-card-number">
+                   </div>
+                   <button><a href="pay.html">結帳</a></button>
+               </form>
+           </div>
+       </div>
+   </body>
+</main>
+
+</html>

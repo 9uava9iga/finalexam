@@ -195,7 +195,4 @@ let slideInterval = setInterval(() => changeSlide(1), 2000);
         slides[slideIndex-1].style.display = "block";  
         dots[slideIndex-1].className += " active-dot";
     }
-    function toggleProfile() {
-        let profileModal = document.getElementById("profile-modal");
-        profileModal.style.display = profileModal.style.display === "block" ? "none" : "block";
-    }
+    

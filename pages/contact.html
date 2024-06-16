@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員資料</title>
+    <link rel="stylesheet" href="../assets/contact.css">
+</head>
+<script>
+function clearCart() {
+    cart = [];
+    updateCart();
+}
+
+function showCheckoutModal() {
+    if (isLoggedIn) {
+        document.getElementById('checkout-modal').style.display = 'block';
+    } else {
+        alert('請先登入');
+        toggleLogin();
+    }
+}
+</script>
+    
+<body>
+    <header>
+        <h1>太陽眼鏡商店</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="index.html">產品</a></li>
+                <li><a href="cart.html" >購物車</a></li>
+                <li><a href="login.html" >會員登入</a></li>
+                <li><a href="profile.html" >會員資料</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="contact">
+            <h2>聯絡我們</h2>
+            <div class="contact-us"><img src="../assets/img/contrast us.png" width="1000px" height="250px"></div>
+                <div class="contact-grid">
+                    <div class="contact">
+                        <a href="mailto:support@sunglassesstore.com">
+                        <img src="../assets/img/mail.png" >
+                        <p>電子郵件：support@sunglassesstore.com</p>
+                    </a>
+                    </div class="contact">
+                    <div class="contact">
+                        <a href="https://www.instagram.com/RayBan/">
+                            <img src="../assets/img/ig logo.png" >
+                            <p>Instagram</p>
+                        </a>
+                    </div>
+                    <div class="contact">
+                        <a href="https://www.facebook.com/RayBan/?locale=zh_TW">
+                            <img src="../assets/img/fb_icon_325x325.png" >
+                            <p>FaceBook</p>
+                        </a>
+                    </div>
+                </div>
+        </section>
+    <footer>
+        <p>copyright@ 2024 All rights reserved</p>
+    </footer>
+</body>
+ 
+</html>
+

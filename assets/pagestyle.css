@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #cee5f7;
+}
+
+header {
+    background-color: #B5C9E6;
+    color: #000;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* 選單背景顏色 */
+    z-index: 1000;
+    /* 確保選單在最上層 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* 可以添加陰影效果，使選單更突出 */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    padding: 14px 16px;
+    color: #000;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #D6A5C2;
+    color: white;
+}
+
+.cart {
+    position: fixed;
+    top: 27px;
+    right: 10px;
+    z-index: 1001;
+    /* 確保在header之上 */
+}
+
+.cart img {
+    width: 100px;
+    height: 100px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.product {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-image {
+    margin-top: 150px;
+    max-width: 100%;
+    height: auto;
+}
+
+.product-info {
+    margin-top: 150px;
+    flex: 1;
+    padding: 20px;
+}
+
+.product-info h1 {
+    margin-top: 0;
+}
+
+
+.product-rating .star:hover,
+.product-rating .star.selected {
+    color: gold;
+}
+
+.product-rating .star {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.star-rating {
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+}
+
+.star-rating::before {
+    content: '★★★★★';
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, gold var(--rating), #ccc var(--rating));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.quantity {
+    margin: 20px 0;
+}
+
+.quantity input {
+    width: 50px;
+    text-align: center;
+}
+
+#add-to-cart {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#add-to-cart:hover {
+    background-color: #45a049;
+}
+
+.reviews {
+    margin: 20px;
+    padding: 20px;
+    background: #e4ebfd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-form {
+    margin-top: 20px;
+}
+
+
+#submit-review:hover {
+    background-color: #007bb5;
+}
+
+footer {
+    background-color: #B5C9E6;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
